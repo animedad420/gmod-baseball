@@ -283,6 +283,7 @@ local uiBaseEmpty = Material("baseball/baseui_baseempty.png", "noclamp smooth")
 local uiBaseFull = Material("baseball/baseui_basefull.png", "noclamp smooth")
 local uiInningTop = Material("baseball/baseui_inningtop.png", "noclamp smooth")
 local uiInningBot = Material("baseball/baseui_inningbot.png", "noclamp smooth")
+local uiPoints = Material("baseball/statui_unspent.png", "noclamp smooth")
 
 function HUD()
 	render.SetGoalToneMappingScale( 0.5 )
@@ -307,6 +308,7 @@ function HUD()
 	local outs = GetGlobalInt( "outs", 0 )
 	local score_red = GetGlobalInt( "redscore", 0 )
 	local score_blue = GetGlobalInt( "bluescore", 0 )
+	local points = LocalPlayer():GetStatPoints()
 	--local chyron = GetGlobalString( "THIS SPACE FOR RENT", 0 )
 	--surface.DrawLine(1,1,50,50)
 
@@ -536,5 +538,10 @@ function HUD()
 	surface.SetMaterial(uiLogoFlair)
 	surface.DrawTexturedRect(19, ScrH() - 151, 90, 60)
 	surface.DrawTexturedRect(19, ScrH() - 80, 90, 60)
+	
+	if points > 0 then
+		surface.SetMaterial(uiPoints)
+		surface.DrawTexturedRect(0, ScrH() - 240, 190, 32)
+	end
 end
 hook.Add("HUDPaint", "TestHud", HUD)
