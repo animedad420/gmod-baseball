@@ -15,6 +15,7 @@ include( 'cl_worldtips.lua' )
 include( 'cl_search_models.lua' )
 include( 'gui/IconEditor.lua' )
 include( 'bb_hud.lua' )
+include( 'bb_scoreboard.lua' )
 
 --
 -- Make BaseClass available

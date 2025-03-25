@@ -20,6 +20,7 @@ AddCSLuaFile( "save_load.lua" )
 AddCSLuaFile( "shared.lua" )
 AddCSLuaFile( "gui/IconEditor.lua" )
 AddCSLuaFile( "bb_hud.lua" )
+AddCSLuaFile( 'bb_scoreboard.lua' )
 
 include( 'shared.lua' )
 include( 'commands.lua' )
