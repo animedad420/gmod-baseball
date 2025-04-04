@@ -14,6 +14,9 @@ include( 'cl_hints.lua' )
 include( 'cl_worldtips.lua' )
 include( 'cl_search_models.lua' )
 include( 'gui/IconEditor.lua' )
+
+include( 'fonts.lua' )
+
 include( 'bb_hud.lua' )
 include( 'bb_scoreboard.lua' )
 
