@@ -57,11 +57,68 @@ surface.CreateFont( "UIScoreFont", {
 	outline = false,
 } )
 
---  UiStaminaFont - For the stamina and fatigue display in the stat menu
+--  UIStaminaFont - For the stamina and fatigue display in the stat menu
 surface.CreateFont( "UIStaminaFont", {
 	font = "Coolvetica", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
 	extended = false,
 	size = ScrH()/22.5, --48 at 1080
+	weight = 500,
+	blursize = 0,
+	scanlines = 0,
+	antialias = true,
+	underline = false,
+	italic = false,
+	strikeout = false,
+	symbol = false,
+	rotary = false,
+	shadow = false,
+	additive = false,
+	outline = false,
+} )
+
+--  UIScoreRunsFont - For that bigass run number on the top of the scoreboard
+surface.CreateFont( "UIScoreRunsFont", {
+	font = "Typographica", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
+	extended = false,
+	size = ScrH()/5.51, --196 at 1080
+	weight = 500,
+	blursize = 0,
+	scanlines = 0,
+	antialias = true,
+	underline = false,
+	italic = false,
+	strikeout = false,
+	symbol = false,
+	rotary = false,
+	shadow = false,
+	additive = false,
+	outline = false,
+} )
+
+--  UIScoreTeamFont - For the team name at the top of the scoreboard
+surface.CreateFont( "UIScoreTeamFont", {
+	font = "Coolvetica", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
+	extended = false,
+	size = ScrH()/22.5, --4 at 1080
+	weight = 500,
+	blursize = 0,
+	scanlines = 0,
+	antialias = true,
+	underline = false,
+	italic = false,
+	strikeout = false,
+	symbol = false,
+	rotary = false,
+	shadow = false,
+	additive = false,
+	outline = false,
+} )
+
+--  UIScoreNameFont - For player names in the tab scoreboard
+surface.CreateFont( "UIScoreNameFont", {
+	font = "Coolvetica", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
+	extended = false,
+	size = ScrH()/45, --24 at 1080
 	weight = 500,
 	blursize = 0,
 	scanlines = 0,
@@ -94,6 +151,60 @@ function ReloadFonts()
 		additive = false,
 		outline = false,
 	} )
+	
+	surface.CreateFont( "UIScoreRunsFont", {
+	font = "Typographica", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
+	extended = false,
+	size = ScrH()/5.51, --196 at 1080
+	weight = 500,
+	blursize = 0,
+	scanlines = 0,
+	antialias = true,
+	underline = false,
+	italic = false,
+	strikeout = false,
+	symbol = false,
+	rotary = false,
+	shadow = false,
+	additive = false,
+	outline = false,
+} )
+
+	surface.CreateFont( "UIScoreTeamFont", {
+	font = "Coolvetica", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
+	extended = false,
+	size = ScrH()/22.5, --4 at 1080
+	weight = 500,
+	blursize = 0,
+	scanlines = 0,
+	antialias = true,
+	underline = false,
+	italic = false,
+	strikeout = false,
+	symbol = false,
+	rotary = false,
+	shadow = false,
+	additive = false,
+	outline = false,
+} )
+
+	surface.CreateFont( "UIScoreNameFont", {
+	font = "Coolvetica", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
+	extended = false,
+	size = ScrH()/45, --24 at 1080
+	weight = 500,
+	blursize = 0,
+	scanlines = 0,
+	antialias = true,
+	underline = false,
+	italic = false,
+	strikeout = false,
+	symbol = false,
+	rotary = false,
+	shadow = false,
+	additive = false,
+	outline = false,
+} )
 	--print("RELOADED FOJNTZ!!!!")
 end
 
