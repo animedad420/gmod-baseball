@@ -20,11 +20,14 @@ local scoreGraphic = Material("baseball/scoreui_scoreboard.png", "noclamp smooth
 local teamMat1 = Material("constructcomets.png", "noclamp smooth")
 local teamMat2 = Material("flatgrassfriends.png", "noclamp smooth")
 
+local playerGrad = Material("baseball/scoreui_playergradient.png", "noclamp smooth")
+
 function scoreboard:show()
+	print(dicks)
 	open = true
 	
 	local playerlist = player.GetAll()
-	PrintTable(playerlist)
+	--PrintTable(playerlist)
 	
 	local panel = vgui.Create("DPanel",dicks)
 	panel:SetPos((ScrW()*0.5)-(sizeX*0.5),(ScrH()*0.5)-(sizeY*0.5))
@@ -263,9 +266,13 @@ function scoreboard:show()
 		--playerBar:SetBackgroundColor(Color(255, 255, 255, 255))
 		
 		playerBar.Paint = function(self,w,h)
-			draw.RoundedBox(3,w*0.01,0,w*0.98,h,awayLight)
+			draw.RoundedBox(3,w*0.01,0,w*0.98,h,awayColor)
 			
-			draw.TexturedQuad
+			surface.SetDrawColor( 255, 255, 255, 196 )
+			surface.SetMaterial(playerGrad)
+			surface.DrawTexturedRect(w*0.01, 0, w*0.98, h)
+			
+			--[[draw.TexturedQuad
 			{
 				texture = surface.GetTextureID "vgui/gradient-d",
 				color = ColorAlpha(awayColor,64),
@@ -283,7 +290,7 @@ function scoreboard:show()
 				y = 0,
 				w = w*0.18,
 				h = h
-			}
+			}]]
 			
 			draw.SimpleText( "99" , "UIScoreNameFont", w*0.05, h/2, Color(0, 0, 0, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 			draw.SimpleText( "PlayerWithLongName " .. i+1 , "UIScoreNameFont", w*0.1, h/2, Color(0, 0, 0, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
@@ -314,8 +321,8 @@ function scoreboard:show()
 	end
 	
 	for ID, ply in pairs(playerlist) do
-		print(ID)
-		print(ply)
+		--print(ID)
+		--print(ply)
 		
 		local playerBar = vgui.Create("DPanel",home)
 		playerBar:SetSize(sizeX/3,sizeY*0.03)
@@ -327,12 +334,16 @@ function scoreboard:show()
 		playerBar:SetPos(0,(playerBar:GetTall()*1.103)*(ID-1)+topBar+midBar+botBar)
 		--playerBar:SetBackgroundColor(Color(200, 200, 200, 255))
 		
-		print(ply:Nick())
+		--print(ply:Nick())
 		
 		playerBar.Paint = function(self,w,h)
-			draw.RoundedBox(3,w*0.01,0,w*0.98,h,homeLight)
+			draw.RoundedBox(3,w*0.01,0,w*0.98,h,homeColor)
 			
-			draw.TexturedQuad
+			surface.SetDrawColor( 255, 255, 255, 196 )
+			surface.SetMaterial(playerGrad)
+			surface.DrawTexturedRect(w*0.01, 0, w*0.98, h)
+			
+			--[[draw.TexturedQuad
 			{
 				texture = surface.GetTextureID "vgui/gradient-d",
 				color = ColorAlpha(homeColor, 64),
@@ -350,7 +361,7 @@ function scoreboard:show()
 				y = 0,
 				w = w*0.18,
 				h = h
-			}
+			}]]
 			
 			draw.SimpleText( "?" , "UIScoreNameFont", w*0.05, h/2, Color(0, 0, 0, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 			
@@ -416,9 +427,13 @@ function scoreboard:show()
 		--playerBar:SetBackgroundColor(Color(200, 200, 200, 255))
 		
 		playerBar.Paint = function(self,w,h)
-			draw.RoundedBox(3,w*0.01,0,w*0.98,h,otherLight)
+			draw.RoundedBox(3,w*0.01,0,w*0.98,h,otherColor)
 			
-			draw.TexturedQuad
+			surface.SetDrawColor( 255, 255, 255, 196 )
+			surface.SetMaterial(playerGrad)
+			surface.DrawTexturedRect(w*0.01, 0, w*0.98, h)
+			
+			--[[draw.TexturedQuad
 			{
 				texture = surface.GetTextureID "vgui/gradient-d",
 				color = Color(200, 200, 200, 64),
@@ -436,7 +451,7 @@ function scoreboard:show()
 				y = 0,
 				w = w*0.18,
 				h = h
-			}
+			}]]
 			
 			--draw.SimpleText( "99" , "UIScoreNameFont", w*0.05, h/2, Color(0, 0, 0, 255), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 			draw.SimpleText( "PlayerWithLongName " .. i+21 , "UIScoreNameFont", w*0.1, h/2, Color(0, 0, 0, 255), TEXT_ALIGN_LEFT, TEXT_ALIGN_CENTER)
@@ -444,6 +459,8 @@ function scoreboard:show()
 			draw.SimpleText( "999" , "UIScoreNameFont", w*0.975, h/2, Color(0, 0, 0, 255), TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER)
 		end
 	end
+	
+	print(scoreboard)
 	
 	--
 	
